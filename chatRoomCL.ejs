@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./chatRoomCL_enter.js"></script>
+<script src="./chatRoomCL_publish.js"></script>
+<script src="./chatRoomCL_exit.js"></script>
+<script src="./chatRoomCL_memo.js"></script>
+<style>
+.row {
+  width: 500px;
+  margin: 20px;
+  font-family: Meiryo;
+}
+</style>
+</head>
+<body>
+<form method="post" action="/">
+  <div class="row">
+    <h1>Node Chat チャットルーム</h1>
+  </div>
+  <div class="row">
+    ログインユーザ：<%= userName %>さん
+  </div>
+  <input id="userName" type="hidden" value="<%= userName %>">
+  <div class="row">
+    <textarea id="msg" rows="4" class="form-control" placeholder="投稿文を入力してください"></textarea>
+  </div>
+  <div class="row">
+    <input type="button" id="write" value="投稿" class="btn btn-info">
+    <input type="button" id="memo" value="メモ" class="btn btn-info">
+  </div>
+  <div class="row">
+    <div id="thread"></div>
+  </div>
+  <div class="row" style="margin-top:20px;">
+    <input type="button" id="exit" value="退室する" class="btn btn-info">
+  </div>
+</form>
+<div>
+</body>
+</html>

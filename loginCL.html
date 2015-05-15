@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script>
+  function checkUserName() {
+    var userName = ($("input[name='userName']").val());
+    if (userName == "") {
+      alert("ユーザ名を入力してください。");
+      return false;
+    }
+    $("form").submit();
+  }
+</script>
+<style>
+.row {
+  width: 500px;
+  margin: 20px;
+  font-family: Meiryo;
+}
+</style>
+</head>
+<body>
+<form method="POST" action="/room">
+  <div class="row">
+    <h1>Node Chat サンプル</h1>
+  </div>
+  <div class="row">
+    ユーザ名
+    <input type="text" size="20" name="userName" class="form-control" style="width:200px;">
+  </div>
+  <div class="row">
+    <input type="button" value="入室する" class="btn btn-info" onclick="checkUserName();">
+  </div>
+</form>
+<div>
+</body>
+</html>
